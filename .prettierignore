@@ -1,0 +1,7 @@
+# Compiled & generated output
+/*/dist/
+
+# Misc
+/.husky
+
+/public
