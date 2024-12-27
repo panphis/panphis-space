@@ -16,7 +16,7 @@ export const MenuContent = ({ isMobile = false }: { isMobile?: boolean }) => (
         />
         <div className="flex flex-col">
           <span className="font-semibold tracking-tight">{process.env.NEXT_PUBLIC_WEBSITE_USERNAME}</span>
-          <span className="text-muted-foreground">前端工程师</span>
+          <span className="text-muted-foreground">全栈工程师</span>
         </div>
       </Link>
       <div className="flex flex-col gap-1">

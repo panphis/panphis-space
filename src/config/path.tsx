@@ -1,4 +1,9 @@
-import { SparklesIcon, PencilLineIcon, NavigationIcon, Wand2Icon, BookmarkIcon, Images, GithubIcon } from 'lucide-react'
+import {
+  SparklesIcon,
+  PencilLineIcon,
+  NavigationIcon, Wand2Icon, BookmarkIcon,
+  Images, Github
+} from 'lucide-react'
 
 export const LINKS = [
   {
@@ -38,12 +43,12 @@ export const LINKS = [
 export const PROFILES = [
   {
     title: 'GitHub',
-    url: 'https://github.com/raydenm',
-    icon: <GithubIcon size={16} />
+    url: 'https://github.com/panphis',
+    icon: <Github size={16} />
   },
   {
     title: '稀土掘金',
-    url: 'https://juejin.cn/collection/6845242851597484040',
+    url: 'https://juejin.cn/user/1275089218715352',
     icon: (
       <svg
         className="size-4"
@@ -62,7 +67,7 @@ export const PROFILES = [
   },
   {
     title: '推特',
-    url: 'https://x.com/Raydenm928',
+    url: 'https://x.com/panphis_ma',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
