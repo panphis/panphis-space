@@ -1,16 +1,16 @@
 import million from 'million/compiler'
-import withPWAInit from '@ducanh2912/next-pwa'
+// import withPWAInit from '@ducanh2912/next-pwa'
 
-const withPWA = withPWAInit({
-  dest: 'public',
-  cacheOnFrontEndNav: true,
-  aggressiveFrontEndNavCaching: true,
-  reloadOnOnline: true,
-  disable: process.env.NODE_ENV === 'development',
-  workboxOptions: {
-    disableDevLogs: true
-  }
-})
+// const withPWA = withPWAInit({
+//   dest: 'public',
+//   cacheOnFrontEndNav: true,
+//   aggressiveFrontEndNavCaching: true,
+//   reloadOnOnline: true,
+//   disable: process.env.NODE_ENV === 'development',
+//   workboxOptions: {
+//     disableDevLogs: true
+//   }
+// })
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -43,4 +43,6 @@ const millionConfig = {
   rsc: true
 }
 
-export default withPWA(million.next(nextConfig, millionConfig))
+// export default withPWA(million.next(nextConfig, millionConfig))
+
+export default million.next(nextConfig, millionConfig)
