@@ -8,8 +8,7 @@
     "prettier": "prettier --write \"**/*.{html,ts,tsx,js,jsx,json,mjs}\"",
     "clear-cache": "rm -rf .next",
     "unused": "next-unused",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
-    "prepare": "husky"
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
   },
   "dependencies": {
     "@cloudflare/next-on-pages": "^1.13.2",
@@ -81,7 +80,6 @@
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-tailwindcss": "^3.15.1",
-    "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "next-unused": "^0.0.6",
     "postcss": "^8.4.31",
@@ -97,12 +95,6 @@
     ],
     "entrypoints": [
       "src"
-    ]
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
     ]
   }
 }

@@ -63,7 +63,7 @@ export const BookmarkList = ({ initialData, id }: BookmarkListProps) => {
   }, [data])
 
   const chunks = useMemo(() => getChunks(), [getChunks])
-  const isReachingEnd = data.length >= initialData?.count ?? 0
+  const isReachingEnd = data.length >= (initialData?.count || 0)
   const isTweetCollection = false
 
   return (
