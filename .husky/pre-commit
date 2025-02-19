@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+node -v
+
+pnpm prettier
+
+pnpm lint

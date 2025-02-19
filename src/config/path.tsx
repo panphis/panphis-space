@@ -1,9 +1,4 @@
-import {
-  SparklesIcon,
-  PencilLineIcon,
-  NavigationIcon, Wand2Icon, BookmarkIcon,
-  Images, Github
-} from 'lucide-react'
+import { SparklesIcon, PencilLineIcon, NavigationIcon, Wand2Icon, BookmarkIcon, Images, Github } from 'lucide-react'
 
 export const LINKS = [
   {

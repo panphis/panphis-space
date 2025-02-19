@@ -212,7 +212,7 @@ export const STACK_LIST = [
 ]
 
 export const BOOKMARK_MAP: { [key: string]: string } = {
-  web: '网站',
+  web: '网站'
 }
 
 export const SCROLL_AREA_ID = 'scroll-area'
