@@ -9,7 +9,7 @@ interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
 }
 
 const Table = React.forwardRef<HTMLTableElement, TableProps>(
-  ({ className, contentClassName, isEmpty, ...props }, ref) => (
+  ({ className, contentClassName, isEmpty: _isEmpty, ...props }, ref) => (
     <div className={cn('relative w-full', contentClassName)}>
       <table ref={ref} className={cn('w-full caption-bottom text-sm', className)} {...props} />
       {/* {isEmpty && (

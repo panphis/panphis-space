@@ -2,13 +2,13 @@
   "extends": [
     "next",
     "prettier",
-    "react-app",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
-    // "plugin:@typescript-eslint/recommended",
-    // "plugin:import/recommended",
     "plugin:tailwindcss/recommended"
+  ],
+  "plugins": [
+    "simple-import-sort"
   ],
   "env": {
     "node": true,
@@ -22,15 +22,34 @@
     "react/prop-types": 0,
     "react/display-name": 0,
     "@next/next/no-img-element": 0,
-    "no-unused-vars": "warn",
-    "import/no-unresolved": [2, { "caseSensitive": false }],
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "import/no-unresolved": [
+      2,
+      {
+        "caseSensitive": false
+      }
+    ],
     "react/no-unescaped-entities": 0
   },
   "settings": {
     "import/resolver": {
       "alias": {
-        "extensions": [".ts", ".tsx"],
-        "map": [["@", "./src"]]
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "map": [
+          [
+            "@",
+            "./src"
+          ]
+        ]
       }
     }
   }

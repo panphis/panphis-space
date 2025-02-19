@@ -31,10 +31,9 @@ export const BookmarkCard = ({ bookmark, order }: BookmarkCardProps) => {
           loading={order < 2 ? 'eager' : 'lazy'}
           className="aspect-square animate-reveal rounded-lg bg-cover bg-center bg-no-repeat object-cover"
           onError={(e) => {
-            // @ts-ignore
-            e.target.onerror = null
-            // @ts-ignore
-            e.target.src = '/assets/fallback.avif'
+            const target = e.target as HTMLImageElement
+            target.onerror = null
+            target.src = '/assets/fallback.avif'
           }}
         />
       </div>

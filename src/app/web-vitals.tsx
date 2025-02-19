@@ -1,14 +1,14 @@
 'use client'
 
-import { umami } from '@/lib/analytics'
+import { UMAMI_TYPEUMAMI_TYPE } from '@/lib/analytics'
 import { useReportWebVitals } from 'next/web-vitals'
 
 declare global {
+  // eslint-disable-next-line no-unused-vars
   interface Window {
     umami: any
   }
 }
-
 export function WebVitals() {
   useReportWebVitals((metric) => {
     if (!window || !window.umami) {
@@ -16,23 +16,23 @@ export function WebVitals() {
     }
     switch (metric.name) {
       case 'FCP': {
-        window.umami.track(umami.webVitals.fcp.name, { data: metric.value })
+        window.umami.track(UMAMI_TYPEUMAMI_TYPE.webVitals.fcp.name, { data: metric.value })
         break
       }
       case 'LCP': {
-        window.umami.track(umami.webVitals.lcp.name, { data: metric.value })
+        window.umami.track(UMAMI_TYPEUMAMI_TYPE.webVitals.lcp.name, { data: metric.value })
         break
       }
       case 'CLS': {
-        window.umami.track(umami.webVitals.cls.name, { data: metric.value })
+        window.umami.track(UMAMI_TYPEUMAMI_TYPE.webVitals.cls.name, { data: metric.value })
         break
       }
       case 'FID': {
-        window.umami.track(umami.webVitals.fid.name, { data: metric.value })
+        window.umami.track(UMAMI_TYPEUMAMI_TYPE.webVitals.fid.name, { data: metric.value })
         break
       }
       case 'INP': {
-        window.umami.track(umami.webVitals.inp.name, { data: metric.value })
+        window.umami.track(UMAMI_TYPEUMAMI_TYPE.webVitals.inp.name, { data: metric.value })
       }
     }
   })

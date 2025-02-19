@@ -14,7 +14,6 @@ export async function GET(request: Request) {
     return NextResponse.json({ messsage: `View count incremented successfully for slug: ${slug}` }, { status: 200 })
   } catch (error) {
     console.error('Error incrementing view count:', error)
-    // @ts-ignore
-    return NextResponse.json({ error: error.message }, { status: 500 })
+    return NextResponse.json({ error: (error as Error).message }, { status: 500 })
   }
 }

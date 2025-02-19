@@ -7,7 +7,7 @@ import { ScreenLoadingSpinner } from '@/components/common/screen-loading-spinner
 import { PhotoList } from '@/components/photo/photo-list'
 import { getPhotoList } from '@/services/supabase/photo'
 import { Link } from '@/components/common/link'
-import { umami } from '@/lib/analytics'
+import { UMAMI_TYPEUMAMI_TYPE } from '@/lib/analytics'
 async function fetchData() {
   const photoData = await getPhotoList({})
   return photoData
@@ -24,7 +24,7 @@ export default async function Photo() {
         <div className="content">
           <div className="flex items-center justify-between">
             <PageTitle title="相册" />
-            <Link data-umami-event={umami.imgstorageTrack.name} href="https://img-storage.pages.dev">
+            <Link data-umami-event={UMAMI_TYPEUMAMI_TYPE.imgstorageTrack.name} href="https://img-storage.pages.dev">
               图床
             </Link>
           </div>

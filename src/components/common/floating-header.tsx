@@ -44,8 +44,9 @@ export const FloatingHeader = memo(
     useEffect(() => {
       const scrollAreaElem = document.querySelector(`#${SCROLL_AREA_ID}`)
 
-      const onScroll = (e: { target: { scrollTop: any } }) => {
-        const scrollY = e.target.scrollTop
+      const onScroll = (e: Event) => {
+        const target = e.target as HTMLElement
+        const scrollY = target.scrollTop
 
         const translateY = Math.max(100 - scrollY, 0)
         const adjustedScroll =
@@ -58,12 +59,10 @@ export const FloatingHeader = memo(
       }
 
       if (scrollTitle) {
-        // @ts-ignore
         scrollAreaElem?.addEventListener('scroll', onScroll, {
           passive: true
         })
       }
-      // @ts-ignore
       return () => scrollAreaElem?.removeEventListener('scroll', onScroll)
     }, [scrollTitle])
 

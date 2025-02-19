@@ -15,7 +15,7 @@ export const MarkdownRenderer = ({ options, ...rest }: MarkdownRendererProps) =>
         overrides: {
           // Extract `className` prop to make Link component work properly
           // eslint-disable-next-line no-unused-vars
-          a: ({ className, ...rest }) => <Link {...rest} />,
+          a: ({ className: _className, ...rest }) => <Link {...rest} />,
           p: ({ children }) => <p className="mb-2 text-sm">{children}</p>,
           img: ({ alt, src }) => (
             <span className="mt-2 block overflow-hidden rounded-xl border">
