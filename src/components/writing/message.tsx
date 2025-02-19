@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import Giscus from '@giscus/react'
 import useSystemTheme from '@/hooks/useSystemTheme'
 export function Message({ slug }: { slug: string }) {
-  const repo = process.env.NEXT_PUBLIC_REPO || ''
+  const repo = (process.env.NEXT_PUBLIC_REPO as `${string}/${string}`) || ''
   const repoId = process.env.NEXT_PUBLIC_REPO_ID || ''
   const category = process.env.NEXT_PUBLIC_CATEGORY || ''
   const categoryId = process.env.NEXT_PUBLIC_CATEGORY_ID || ''
@@ -26,7 +26,9 @@ export function Message({ slug }: { slug: string }) {
       setGiscusTheme(systemTheme)
       setGiscusKey(Math.random().toString(36))
     } else {
-      theme && setGiscusTheme(theme)
+      if (theme) {
+        setGiscusTheme(theme)
+      }
       setGiscusKey(Math.random().toString(36))
     }
   }, [systemTheme, theme])
@@ -36,7 +38,6 @@ export function Message({ slug }: { slug: string }) {
       <Giscus
         id="comments"
         key={giscuskey}
-        // @ts-ignore
         repo={repo}
         repoId={repoId}
         category={category}

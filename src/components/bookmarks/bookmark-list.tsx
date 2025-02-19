@@ -22,15 +22,16 @@ export type BookmarkItemType = {
 export type BookmarkItemsType = {
   items: BookmarkItemType[]
   result: true
+  count?: number
 }
 
 type BookmarkListProps = {
-  initialData: any
+  initialData: BookmarkItemsType
   id: number
 }
 
 export const BookmarkList = ({ initialData, id }: BookmarkListProps) => {
-  const [data, setData] = useState(initialData?.result ? initialData?.items : [])
+  const [data, setData] = useState<BookmarkItemType[]>(initialData?.result ? initialData?.items : [])
   const [pageIndex, setPageIndex] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -63,22 +64,19 @@ export const BookmarkList = ({ initialData, id }: BookmarkListProps) => {
   }, [data])
 
   const chunks = useMemo(() => getChunks(), [getChunks])
-  const isReachingEnd = data.length >= initialData?.count ?? 0
+  const isReachingEnd = data.length >= (initialData?.count ?? 0)
   const isTweetCollection = false
 
   return (
     <div>
       <div className="flex flex-col gap-4 @lg:hidden">
-        {
-          // @ts-ignore
-          data.map((bookmark, bookmarkIndex) => {
-            return (
-              <div key={`bookmark_${bookmarkIndex}`}>
-                <BookmarkCard key={bookmark._id} bookmark={bookmark} order={bookmarkIndex} />
-              </div>
-            )
-          })
-        }
+        {data.map((bookmark, bookmarkIndex) => {
+          return (
+            <div key={`bookmark_${bookmarkIndex}`}>
+              <BookmarkCard key={bookmark._id} bookmark={bookmark} order={bookmarkIndex} />
+            </div>
+          )
+        })}
       </div>
       <div className="hidden @lg:grid @lg:grid-cols-2 @lg:gap-4">
         {chunks.map((chunk, chunkIndex) => {

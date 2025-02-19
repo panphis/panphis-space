@@ -1,4 +1,4 @@
-export const umami = {
+export const UMAMI_TYPEUMAMI_TYPE = {
   webVitals: {
     fcp: {
       name: 'web-vitals-fcp'

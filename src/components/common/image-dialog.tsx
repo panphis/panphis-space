@@ -1,7 +1,7 @@
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import { useState } from 'react'
 import { LoadingSpinner } from '@/components/common/loading-spinner'
-const ImageDialog = ({ url, open, setOpen }: { url: string; open: boolean; setOpen: (open: boolean) => void }) => {
+const ImageDialog = ({ url, open, setOpen }: { url: string; open: boolean; setOpen: (_open: boolean) => void }) => {
   const [loading, setLoading] = useState(true)
   const handleOpenChange = (value: boolean) => {
     if (value === false) {
@@ -28,7 +28,7 @@ const ImageDialog = ({ url, open, setOpen }: { url: string; open: boolean; setOp
             src={url}
             alt=""
             className="block max-h-[80vh] max-w-[95vw] rounded-md border-none md:max-w-[80vw]"
-            onLoad={(e) => {
+            onLoad={() => {
               setLoading(false)
             }}
           />

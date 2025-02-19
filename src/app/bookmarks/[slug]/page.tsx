@@ -43,7 +43,7 @@ export default async function CollectionPage({ params }: { params: { slug: strin
         <div className="content @container">
           <PageTitle title={currentBookmark.title} />
           <Suspense fallback={<ScreenLoadingSpinner />}>
-            <BookmarkList id={currentBookmark._id} initialData={bookmarkItems} />
+            {bookmarkItems && <BookmarkList id={currentBookmark._id} initialData={bookmarkItems} />}
           </Suspense>
         </div>
       </div>

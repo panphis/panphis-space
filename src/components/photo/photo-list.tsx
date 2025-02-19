@@ -28,7 +28,11 @@ export const PhotoList = ({ initialData }: { initialData: any }) => {
     const res = await getPhotoList({ pageIndex })
     const { data } = res
     if (data) {
-      pageIndex === 0 ? setData(data) : setData((prevData: phoneItem[]) => [...prevData, ...data])
+      if (pageIndex === 0) {
+        setData(data)
+      } else {
+        setData((prevData: phoneItem[]) => [...prevData, ...data])
+      }
     }
     setIsLoading(false)
   }, [pageIndex])
