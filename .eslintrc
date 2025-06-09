@@ -2,7 +2,7 @@
   "extends": [
     "next",
     "prettier",
-    "react-app",
+    // "react-app",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",

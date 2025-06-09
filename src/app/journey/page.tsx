@@ -8,6 +8,7 @@ import { ScreenLoadingSpinner } from '@/components/common/screen-loading-spinner
 import { PageTitle } from '@/components/layout/page-title'
 import { GradientBg3 } from '@/components/common/gradient-bg'
 import { getAllLogbook } from '@/services/contentful'
+import { PageContainer } from '@/components/layout/page-container'
 
 async function fetchData() {
   const allLogbook = await getAllLogbook()
@@ -30,8 +31,7 @@ export default async function Journey() {
     <ScrollArea useScrollAreaId>
       <GradientBg3 />
       <FloatingHeader scrollTitle="时光记录" />
-      <div className="content-wrapper">
-        <div className="content">
+      <PageContainer >
           <PageTitle title="时光记录" />
           <Suspense fallback={<ScreenLoadingSpinner />}>
             <div className="flex flex-col items-stretch gap-12">
@@ -62,8 +62,7 @@ export default async function Journey() {
               ))}
             </div>
           </Suspense>
-        </div>
-      </div>
+      </PageContainer>
     </ScrollArea>
   )
 }

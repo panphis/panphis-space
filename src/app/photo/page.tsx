@@ -8,6 +8,7 @@ import { PhotoList } from '@/components/photo/photo-list'
 import { getPhotoList } from '@/services/supabase/photo'
 import { Link } from '@/components/common/link'
 import { umami } from '@/lib/analytics'
+import { PageContainer } from '@/components/layout/page-container'
 async function fetchData() {
   const photoData = await getPhotoList({})
   return photoData
@@ -20,8 +21,7 @@ export default async function Photo() {
     <ScrollArea useScrollAreaId>
       <GradientBg />
       <FloatingHeader scrollTitle="相册" />
-      <div className="content-wrapper">
-        <div className="content">
+      <PageContainer>
           <div className="flex items-center justify-between">
             <PageTitle title="相册" />
             <Link data-umami-event={umami.imgstorageTrack.name} href="https://img-storage.pages.dev">
@@ -32,8 +32,7 @@ export default async function Photo() {
           <Suspense fallback={<ScreenLoadingSpinner />}>
             <PhotoList initialData={photoData} />
           </Suspense>
-        </div>
-      </div>
+      </PageContainer>
     </ScrollArea>
   )
 }

@@ -11,6 +11,7 @@ import rehypeHighlight from 'rehype-highlight'
 import { Link } from '@/components/common/link'
 import 'highlight.js/styles/github-dark.css'
 import '@/style/article.css'
+import { PageContainer } from '@/components/layout/page-container'
 export async function generateStaticParams() {
   const allPosts: { slug: string }[] = await getAllPostSlugs()
   return allPosts.map((post) => ({ slug: post.slug }))
@@ -45,7 +46,7 @@ export default async function WritingSlug({ params }: { params: { slug: string }
         <FloatingHeader scrollTitle={title} goBackLink="/writing">
           <WritingViews slug={slug} />
         </FloatingHeader>
-        <div className="content-wrapper @container/writing">
+        <PageContainer className="@container/writing">
           <article className="content">
             <PageTitle
               title={title}
@@ -68,7 +69,7 @@ export default async function WritingSlug({ params }: { params: { slug: string }
             )}
             <Message slug={slug} />
           </article>
-        </div>
+        </PageContainer>
       </ScrollArea>
     </>
   )

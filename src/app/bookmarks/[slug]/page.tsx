@@ -7,6 +7,7 @@ import { FloatingHeader } from '@/components/common/floating-header'
 import { ScreenLoadingSpinner } from '@/components/common/screen-loading-spinner'
 import { BookmarkList } from '@/components/bookmarks/bookmark-list'
 import { getBookmarkItems, getBookmarks } from '@/services/raindrop'
+import { PageContainer } from '@/components/layout/page-container'
 
 export async function generateStaticParams() {
   const bookmarks = await getBookmarks()
@@ -39,14 +40,12 @@ export default async function CollectionPage({ params }: { params: { slug: strin
         bookmarks={bookmarks}
         currentBookmark={currentBookmark}
       />
-      <div className="content-wrapper">
-        <div className="content @container">
+      <PageContainer className="@container">
           <PageTitle title={currentBookmark.title} />
           <Suspense fallback={<ScreenLoadingSpinner />}>
             <BookmarkList id={currentBookmark._id} initialData={bookmarkItems} />
           </Suspense>
-        </div>
-      </div>
+      </PageContainer>
     </ScrollArea>
   )
 }

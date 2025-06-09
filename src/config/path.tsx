@@ -2,8 +2,11 @@ import {
   SparklesIcon,
   PencilLineIcon,
   NavigationIcon, Wand2Icon, BookmarkIcon,
-  Images, Github
+  FileCode,
+  Images, 
 } from 'lucide-react'
+
+import { GitHubLogoIcon } from "@radix-ui/react-icons"
 
 export const LINKS = [
   {
@@ -14,8 +17,12 @@ export const LINKS = [
   {
     href: '/writing',
     label: '文章',
-    defaultHref: `/text`,
     icon: <PencilLineIcon size={16} />
+  },
+  {
+    href: '/projects',
+    label: '作品',
+    icon: <FileCode size={16} />
   },
   {
     href: '/journey',
@@ -44,7 +51,7 @@ export const PROFILES = [
   {
     title: 'GitHub',
     url: 'https://github.com/panphis',
-    icon: <Github size={16} />
+    icon: <GitHubLogoIcon />
   },
   {
     title: '稀土掘金',

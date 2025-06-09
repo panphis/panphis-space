@@ -23,7 +23,7 @@ export const MenuContent = ({ isMobile = false }: { isMobile?: boolean }) => (
         {LINKS.map((link, linkIndex) => (
           <NavigationLink
             key={link.href}
-            href={isMobile ? link.href : link.href + (link.defaultHref || '')}
+            href={link.href}
             label={link.label}
             icon={link.icon}
             shortcutNumber={linkIndex + 1}

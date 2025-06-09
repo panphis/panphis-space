@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button'
 import { getAllPosts } from '@/services/contentful'
 import { getSortedPosts, getItemsByYear } from '@/lib/utils'
 import { ContcatContent } from '@/components/contcat/contcat-content'
+import { PageContainer } from '@/components/layout/page-container'
 
 async function fetchData() {
   const allPosts = await getAllPosts()
@@ -24,8 +25,7 @@ export default async function Home() {
   return (
     <ScrollArea useScrollAreaId>
       <FloatingHeader scrollTitle={process.env.NEXT_PUBLIC_WEBSITE_USERNAME} />
-      <div className="content-wrapper">
-        <div className="content">
+      <PageContainer > 
           <PageTitle title={process.env.NEXT_PUBLIC_WEBSITE_USERNAME as string} />
           <div>
             <div className="mb-4 leading-slacker">这是一个记录成长及归纳总结的地方。</div>
@@ -47,8 +47,7 @@ export default async function Home() {
           <Suspense fallback={<ScreenLoadingSpinner />}>
             <WritingList items={items} />
           </Suspense>
-        </div>
-      </div>
+      </PageContainer>
     </ScrollArea>
   )
 }
