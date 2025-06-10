@@ -4,23 +4,14 @@ import { cn } from '@/lib/utils'
 // import Empty from "@/assets/empty.png";
 
 interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
-  isEmpty?: boolean
   contentClassName?: string
 }
 
-const Table = React.forwardRef<HTMLTableElement, TableProps>(
-  ({ className, contentClassName, isEmpty, ...props }, ref) => (
-    <div className={cn('relative w-full', contentClassName)}>
-      <table ref={ref} className={cn('w-full caption-bottom text-sm', className)} {...props} />
-      {/* {isEmpty && (
-        <div className="my-20 flex w-full flex-col items-center text-light-500">
-          <img src={Empty} alt="" />
-          暂无内容
-        </div>
-      )} */}
-    </div>
-  )
-)
+const Table = React.forwardRef<HTMLTableElement, TableProps>(({ className, contentClassName, ...props }, ref) => (
+  <div className={cn('relative w-full', contentClassName)}>
+    <table ref={ref} className={cn('w-full caption-bottom text-sm', className)} {...props} />
+  </div>
+))
 Table.displayName = 'Table'
 
 const TableHeader = React.forwardRef<HTMLTableSectionElement, React.HTMLAttributes<HTMLTableSectionElement>>(

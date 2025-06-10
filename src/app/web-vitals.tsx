@@ -4,6 +4,7 @@ import { umami } from '@/lib/analytics'
 import { useReportWebVitals } from 'next/web-vitals'
 
 declare global {
+  // eslint-disable-next-line no-unused-vars
   interface Window {
     umami: any
   }

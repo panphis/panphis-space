@@ -60,7 +60,7 @@ export default async function WritingSlug({ params }: { params: { slug: string }
             {markdown && (
               <Markdown
                 components={{
-                  a: ({ className, ...rest }) => <Link {...rest} />
+                  a: ({ className: _c, ...rest }) => <Link {...rest} />
                 }}
                 rehypePlugins={[rehypeHighlight]}
               >

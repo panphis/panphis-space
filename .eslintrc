@@ -22,7 +22,18 @@
     "react/prop-types": 0,
     "react/display-name": 0,
     "@next/next/no-img-element": 0,
-    "no-unused-vars": "warn",
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "all",
+        "argsIgnorePattern": "^_",
+        "caughtErrors": "all",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
     "import/no-unresolved": [2, { "caseSensitive": false }],
     "react/no-unescaped-entities": 0
   },

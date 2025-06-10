@@ -1,18 +1,15 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
+import { ReactNode } from 'react'
 
 export interface PageContainerProps {
-  children: React.ReactNode;
-  className?: string;
+  children: ReactNode
+  className?: string
 }
 
 export function PageContainer({ children, className }: PageContainerProps) {
   return (
-   <div className="content-wrapper">
-        <div className={cn("content", className)}>
-          {children}
-        </div>
-      </div>
-  );
+    <div className="content-wrapper">
+      <div className={cn('content', className)}>{children}</div>
+    </div>
+  )
 }
-
-

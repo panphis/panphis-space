@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { NavigationLink } from '@/components/common/navigation-link'
 import { LINKS, PROFILES } from '@/config/path'
 
-export const MenuContent = ({ isMobile = false }: { isMobile?: boolean }) => (
+export const MenuContent = ({ isMobile: _m = false }: { isMobile?: boolean }) => (
   <div className="flex w-full flex-col text-sm">
     <div className="flex flex-col gap-4">
       <Link href="/" className="link-card inline-flex items-center gap-2 p-2">

@@ -25,7 +25,7 @@ const formSchema = z.object({
 
 type SubmitContcatFormProps = {
   className?: string
-  setFormOpen: (open: boolean) => void
+  setFormOpen: (_open: boolean) => void
 }
 
 export function SubmitContcatForm({ className, setFormOpen }: SubmitContcatFormProps) {
